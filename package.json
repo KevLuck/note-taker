@@ -1,9 +1,9 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    
+    "start": "node index.js"
   },
   "author": "kevin luckhai",
   "license": "ISC",
