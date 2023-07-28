@@ -4,8 +4,6 @@ const path = require('path')
 const api = require('./routes/notes.js')
 // const fs = require('fs')
 
-
-
 const app = express()
 
 // middleware for parsing JSON and urlencoded data
