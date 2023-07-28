@@ -1,8 +1,4 @@
-import fs from "fs";
-import util from "util";
-
-// Promise version of fs.readFile
-const readFromFile = util.promisify(fs.readFile);
+const { readFile, writeFile } = require("fs/promises");
 
 /**
  * Function to write data to the JSON file given a destination and some content
@@ -11,7 +7,7 @@ const readFromFile = util.promisify(fs.readFile);
  * @returns {void} Nothing
  */
 async function writeToFile(destination, content) {
-  await fs.writeFile(destination, JSON.stringify(content, null, 4));
+  await writeFile(destination, JSON.stringify(content, null, 4));
   console.info(`\nData written to ${destination}`);
 }
 
@@ -22,10 +18,11 @@ async function writeToFile(destination, content) {
  * @returns {void} Nothing
  */
 async function readAndAppend(content, file) {
-  const data = await readFromFile(file, "utf8");
+  const data = await readFile(file, "utf8");
   const parsedData = JSON.parse(data);
   parsedData.push(content);
-  await writeToFile(file, parsedData);
+  await writeFile(file, parsedData);
 }
 
-export { readFromFile, writeToFile, readAndAppend };
+export { writeToFile, readAndAppend };
+

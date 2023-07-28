@@ -1,4 +1,4 @@
-import random from "random";
+const { random } = require("random");
 
 const generateRandomString = () => {
   // Generate a random number between 1 and 0x10000
@@ -11,3 +11,4 @@ const generateRandomString = () => {
 
 // Export the function
 export default generateRandomString;
+

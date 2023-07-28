@@ -1,7 +1,6 @@
-import express from "express";
-import { readFromFile as readFile, readAndAppend as appendFile } from "../helpers/file-io";
-import uuid from "../helpers/random-string";
-import fs from "fs";
+const express = require("express");
+const { readFile, appendFile } = require("../helpers/file-io");
+const uuid = require("../helpers/random-string");
 
 const router = express.Router();
 
@@ -20,7 +19,7 @@ router.post("/notes", async (req, res) => {
     id: uuid(),
   };
   await appendFile(newNote, "./db/db.json");
-  res.json("success");
+  res.json({ message: "Note created successfully" });
 });
 
 // DELETE route
