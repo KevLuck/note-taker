@@ -7,8 +7,6 @@ This is a simple note taking app.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
 
 ## Installation
 https://gentle-bastion-65787-520ac3057322.herokuapp.com/notes
